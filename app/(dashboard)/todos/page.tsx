@@ -1,3 +1,5 @@
+import Todo from "@/components/Todo";
+import TodoList from "@/components/TodoList";
 import db from "@/utils/db";
 
 const getTodos = async () => {
@@ -5,8 +7,13 @@ const getTodos = async () => {
   return todos;
 };
 
-const TodosPage = () => {
-  return <div>TodosPage</div>;
+const TodosPage = async () => {
+  const todos = await getTodos();
+  return (
+    <div>
+      <TodoList todos={todos} />
+    </div>
+  );
 };
 
 export default TodosPage;
