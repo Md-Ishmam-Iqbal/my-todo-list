@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export const middleware = (request) => {
+const middleware = (request) => {
   return NextResponse.redirect(new URL("/", request.url));
 };
 
